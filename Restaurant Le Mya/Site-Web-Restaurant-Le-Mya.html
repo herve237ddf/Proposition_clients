@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Mya - Restaurant à Douala | Le goût de l'exception</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D4AF37',
+                        secondary: '#1A1A1A'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-open-sans { font-family: 'Open Sans', sans-serif; }
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .hover-zoom {
+            transition: transform 0.3s ease;
+        }
+        .hover-zoom:hover {
+            transform: scale(1.05);
+        }
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(26, 26, 26, 0.8);
+        }
+        .menu-item {
+            transition: all 0.3s ease;
+        }
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        .review-card {
+            min-height: 200px;
+        }
+        .stars {
+            color: #D4AF37;
+        }
+    </style>
+</head>
+<body class="font-open-sans text-gray-800">
+    <header class="fixed top-0 w-full z-50 glass-effect">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-playfair font-bold text-primary">Le Mya</h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#accueil" class="text-white hover:text-primary transition-colors duration-300">Accueil</a>
+                    <a href="#apropos" class="text-white hover:text-primary transition-colors duration-300">À propos</a>
+                    <a href="#menu" class="text-white hover:text-primary transition-colors duration-300">Menu</a>
+                    <a href="#services" class="text-white hover:text-primary transition-colors duration-300">Services</a>
+                    <a href="#reservation" class="text-white hover:text-primary transition-colors duration-300">Réservation</a>
+                    <a href="#contact" class="text-white hover:text-primary transition-colors duration-300">Contact</a>
+                </div>
+                <button class="bg-primary text-secondary px-6 py-2 !rounded-button font-semibold hover:bg-yellow-500 transition-colors duration-300 whitespace-nowrap">
+                    Réserver
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section id="accueil" class="relative min-h-screen flex items-center justify-center parallax-bg" style="background-image: url('https://readdy.ai/api/search-image?query=elegant%20restaurant%20interior%20with%20warm%20lighting%2C%20wooden%20tables%2C%20comfortable%20seating%2C%20modern%20African%20decor%2C%20sophisticated%20dining%20atmosphere%20in%20Douala%2C%20warm%20golden%20lighting%2C%20professional%20photography%2C%20high-end%20restaurant%20ambiance%2C%20inviting%20atmosphere&width=1920&height=1080&seq=hero-bg&orientation=landscape')">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+            <div class="mb-6">
+                <div class="inline-flex items-center bg-primary text-secondary px-4 py-2 rounded-full mb-4">
+                    <div class="flex items-center mr-2">
+                        <i class="ri-star-fill text-sm"></i>
+                        <i class="ri-star-fill text-sm"></i>
+                        <i class="ri-star-fill text-sm"></i>
+                        <i class="ri-star-fill text-sm"></i>
+                        <i class="ri-star-line text-sm"></i>
+                    </div>
+                    <span class="font-semibold">4.0/5 • 242 avis</span>
+                </div>
+            </div>
+            <h1 class="text-6xl md:text-8xl font-playfair font-bold mb-6">Le Mya</h1>
+            <p class="text-xl md:text-2xl font-light mb-12 opacity-90">Le goût de l'exception à Douala</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-primary text-secondary px-8 py-4 !rounded-button font-semibold text-lg hover:bg-yellow-500 transition-colors duration-300 whitespace-nowrap">
+                    Voir le menu
+                </button>
+                <button class="bg-transparent border-2 border-primary text-primary px-8 py-4 !rounded-button font-semibold text-lg hover:bg-primary hover:text-secondary transition-all duration-300 whitespace-nowrap">
+                    Commander
+                </button>
+                <button class="bg-transparent border-2 border-white text-white px-8 py-4 !rounded-button font-semibold text-lg hover:bg-white hover:text-secondary transition-all duration-300 whitespace-nowrap">
+                    Réserver une table
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-secondary mb-4">Nos Services</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Découvrez nos différentes options pour savourer la cuisine du Mya selon vos préférences</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="ri-restaurant-2-line text-3xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-2xl font-playfair font-semibold text-secondary mb-4">Sur Place</h3>
+                    <p class="text-gray-600 leading-relaxed">Profitez de notre ambiance chaleureuse et de notre service attentionné dans notre restaurant élégant au cœur de Douala</p>
+                </div>
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="ri-shopping-bag-3-line text-3xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-2xl font-playfair font-semibold text-secondary mb-4">À Emporter</h3>
+                    <p class="text-gray-600 leading-relaxed">Commandez vos plats préférés et venez les récupérer pour les déguster où vous le souhaitez</p>
+                </div>
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="ri-e-bike-2-line text-3xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-2xl font-playfair font-semibold text-secondary mb-4">Livraison</h3>
+                    <p class="text-gray-600 leading-relaxed">Faites-vous livrer nos délicieux plats directement chez vous pour un moment gourmand en toute simplicité</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="apropos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-playfair font-bold text-secondary mb-6">À Propos du Mya</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        Depuis notre ouverture, Le Mya s'est imposé comme une référence gastronomique à Douala. Notre passion pour l'excellence culinaire et notre engagement envers un service irréprochable nous ont valu la confiance de plus de 240 clients satisfaits.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        Dans un cadre élégant et chaleureux, notre équipe de chefs talentueux vous propose une cuisine raffinée qui marie traditions locales et techniques modernes. Chaque plat est préparé avec des ingrédients soigneusement sélectionnés pour vous offrir une expérience culinaire inoubliable.
+                    </p>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Que ce soit pour un déjeuner d'affaires, un dîner romantique ou une célébration en famille, Le Mya vous accueille dans une atmosphère sophistiquée où chaque détail compte.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="https://readdy.ai/api/search-image?query=elegant%20restaurant%20interior%20dining%20room%20with%20modern%20African%20decor%2C%20warm%20lighting%2C%20wooden%20furniture%2C%20sophisticated%20atmosphere%2C%20professional%20photography%2C%20high-end%20restaurant%20ambiance%20in%20Douala&width=400&height=300&seq=about-1&orientation=landscape" alt="Intérieur du restaurant" class="rounded-xl hover-zoom object-cover h-48 w-full">
+                    <img src="https://readdy.ai/api/search-image?query=beautiful%20restaurant%20terrace%20with%20outdoor%20seating%2C%20elegant%20furniture%2C%20plants%2C%20warm%20evening%20lighting%2C%20sophisticated%20outdoor%20dining%20area%20in%20Douala%2C%20professional%20photography&width=400&height=300&seq=about-2&orientation=landscape" alt="Terrasse" class="rounded-xl hover-zoom object-cover h-48 w-full">
+                    <img src="https://readdy.ai/api/search-image?query=gourmet%20African%20dish%20beautifully%20plated%2C%20elegant%20presentation%2C%20fine%20dining%2C%20colorful%20ingredients%2C%20professional%20food%20photography%2C%20restaurant%20quality%20plating%2C%20sophisticated%20cuisine&width=400&height=300&seq=about-3&orientation=landscape" alt="Plat signature" class="rounded-xl hover-zoom object-cover h-48 w-full col-span-2">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-secondary mb-4">Notre Menu</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Découvrez notre sélection de plats raffinés, préparés avec passion par nos chefs</p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="menu-category-btn bg-primary text-secondary px-6 py-3 !rounded-button font-semibold whitespace-nowrap" data-category="entrees">Entrées</button>
+                <button class="menu-category-btn bg-white text-secondary px-6 py-3 !rounded-button font-semibold border border-gray-200 whitespace-nowrap" data-category="plats">Plats</button>
+                <button class="menu-category-btn bg-white text-secondary px-6 py-3 !rounded-button font-semibold border border-gray-200 whitespace-nowrap" data-category="desserts">Desserts</button>
+                <button class="menu-category-btn bg-white text-secondary px-6 py-3 !rounded-button font-semibold border border-gray-200 whitespace-nowrap" data-category="boissons">Boissons</button>
+            </div>
+
+            <div class="menu-items grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="menu-item bg-white rounded-xl shadow-lg overflow-hidden" data-category="entrees">
+                    <img src="https://readdy.ai/api/search-image?query=elegant%20African%20appetizer%20beautifully%20plated%2C%20colorful%20vegetables%2C%20sophisticated%20presentation%2C%20fine%20dining%20starter%2C%20professional%20food%20photography%2C%20restaurant%20quality%20plating%2C%20warm%20lighting&width=400&height=250&seq=menu-1&orientation=landscape" alt="Salade de crevettes" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-playfair font-semibold text-secondary mb-2">Salade de Crevettes Tropicales</h3>
+                        <p class="text-gray-600 mb-4">Crevettes grillées, mangue, avocat, vinaigrette passion</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary">8 500 FCFA</span>
+                            <button class="bg-primary text-secondary px-4 py-2 !rounded-button font-semibold hover:bg-yellow-500 transition-colors whitespace-nowrap">Commander</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item bg-white rounded-xl shadow-lg overflow-hidden" data-category="entrees">
+                    <img src="https://readdy.ai/api/search-image?query=African%20soup%20in%20elegant%20bowl%2C%20traditional%20ingredients%2C%20modern%20presentation%2C%20fine%20dining%20appetizer%2C%20professional%20food%20photography%2C%20warm%20colors%2C%20sophisticated%20plating&width=400&height=250&seq=menu-2&orientation=landscape" alt="Velouté" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-playfair font-semibold text-secondary mb-2">Velouté de Courge Butternut</h3>
+                        <p class="text-gray-600 mb-4">Crème de courge, épices douces, croûtons dorés</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary">6 000 FCFA</span>
+                            <button class="bg-primary text-secondary px-4 py-2 !rounded-button font-semibold hover:bg-yellow-500 transition-colors whitespace-nowrap">Commander</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item bg-white rounded-xl shadow-lg overflow-hidden" data-category="plats">
+                    <img src="https://readdy.ai/api/search-image?query=grilled%20fish%20with%20African%20spices%2C%20elegant%20plating%2C%20colorful%20vegetables%2C%20fine%20dining%20main%20course%2C%20professional%20food%20photography%2C%20restaurant%20quality%20presentation%2C%20warm%20lighting&width=400&height=250&seq=menu-3&orientation=landscape" alt="Poisson grillé" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-playfair font-semibold text-secondary mb-2">Poisson Grillé aux Épices</h3>
+                        <p class="text-gray-600 mb-4">Poisson frais, marinade épicée, légumes de saison</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary">15 000 FCFA</span>
+                            <button class="bg-primary text-secondary px-4 py-2 !rounded-button font-semibold hover:bg-yellow-500 transition-colors whitespace-nowrap">Commander</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item bg-white rounded-xl shadow-lg overflow-hidden" data-category="plats">
+                    <img src="https://readdy.ai/api/search-image?query=African%20chicken%20dish%20with%20traditional%20spices%2C%20elegant%20presentation%2C%20colorful%20vegetables%2C%20fine%20dining%20main%20course%2C%20professional%20food%20photography%2C%20sophisticated%20plating&width=400&height=250&seq=menu-4&orientation=landscape" alt="Poulet DG" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-playfair font-semibold text-secondary mb-2">Poulet DG Revisité</h3>
+                        <p class="text-gray-600 mb-4">Poulet fermier, plantains, légumes sautés, sauce signature</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary">12 500 FCFA</span>
+                            <button class="bg-primary text-secondary px-4 py-2 !rounded-button font-semibold hover:bg-yellow-500 transition-colors whitespace-nowrap">Commander</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item bg-white rounded-xl shadow-lg overflow-hidden" data-category="plats">
+                    <img src="https://readdy.ai/api/search-image?query=grilled%20beef%20with%20African%20spices%2C%20elegant%20plating%2C%20colorful%20vegetables%2C%20fine%20dining%20main%20course%2C%20professional%20food%20photography%2C%20restaurant%20quality%20presentation&width=400&height=250&seq=menu-5&orientation=landscape" alt="Bœuf grillé" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-playfair font-semibold text-secondary mb-2">Bœuf Grillé Sauce Njama Njama</h3>
+                        <p class="text-gray-600 mb-4">Entrecôte grillée, sauce aux épinards locaux, riz parfumé</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary">18 000 FCFA</span>
+                            <button class="bg-primary text-secondary px-4 py-2 !rounded-button font-semibold hover:bg-yellow-500 transition-colors whitespace-nowrap">Commander</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item bg-white rounded-xl shadow-lg overflow-hidden" data-category="desserts">
+                    <img src="https://readdy.ai/api/search-image?query=elegant%20African%20dessert%20with%20tropical%20fruits%2C%20modern%20presentation%2C%20fine%20dining%20dessert%2C%20professional%20food%20photography%2C%20sophisticated%20plating%2C%20warm%20colors&width=400&height=250&seq=menu-6&orientation=landscape" alt="Dessert tropical" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-playfair font-semibold text-secondary mb-2">Tarte Tropicale</h3>
+                        <p class="text-gray-600 mb-4">Pâte sablée, crème pâtissière, fruits exotiques</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary">4 500 FCFA</span>
+                            <button class="bg-primary text-secondary px-4 py-2 !rounded-button font-semibold hover:bg-yellow-500 transition-colors whitespace-nowrap">Commander</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="reservation" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-secondary mb-4">Réservation & Commande</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Réservez votre table ou commandez vos plats préférés en quelques clics</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <h3 class="text-2xl font-playfair font-semibold text-secondary mb-6">Réserver une Table</h3>
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <input type="text" placeholder="Nom complet" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            <input type="email" placeholder="Email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <input type="tel" placeholder="Téléphone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <input type="date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            <input type="time" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            <input type="number" placeholder="Personnes" min="1" max="20" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <textarea placeholder="Message (optionnel)" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none"></textarea>
+                        <button type="submit" class="w-full bg-primary text-secondary py-4 !rounded-button font-semibold text-lg hover:bg-yellow-500 transition-colors whitespace-nowrap">
+                            Réserver Maintenant
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="space-y-8">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-playfair font-semibold text-secondary mb-6">Autres Options</h3>
+                    </div>
+                    
+                    <div class="bg-green-50 p-6 rounded-xl border border-green-200">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                                <i class="ri-whatsapp-fill text-2xl text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-secondary">WhatsApp</h4>
+                                <p class="text-gray-600">Commandez rapidement</p>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/237698678157" class="block w-full bg-green-500 text-white text-center py-3 !rounded-button font-semibold hover:bg-green-600 transition-colors whitespace-nowrap">
+                            +237 698 67 81 57
+                        </a>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-orange-50 p-4 rounded-xl border border-orange-200 text-center">
+                            <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="ri-shopping-cart-2-fill text-xl text-white"></i>
+                            </div>
+                            <h4 class="font-semibold text-secondary mb-2">Jumia Food</h4>
+                            <button class="w-full bg-orange-500 text-white py-2 !rounded-button text-sm font-semibold hover:bg-orange-600 transition-colors whitespace-nowrap">
+                                Commander
+                            </button>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-xl border border-purple-200 text-center">
+                            <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="ri-e-bike-2-fill text-xl text-white"></i>
+                            </div>
+                            <h4 class="font-semibold text-secondary mb-2">Glovo</h4>
+                            <button class="w-full bg-purple-500 text-white py-2 !rounded-button text-sm font-semibold hover:bg-purple-600 transition-colors whitespace-nowrap">
+                                Commander
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h4 class="text-xl font-semibold text-secondary mb-4">Horaires d'Ouverture</h4>
+                        <div class="space-y-2 text-gray-600">
+                            <div class="flex justify-between">
+                                <span>Lundi - Jeudi</span>
+                                <span>12h00 - 22h00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Vendredi - Samedi</span>
+                                <span>12h00 - 23h00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Dimanche</span>
+                                <span>12h00 - 21h00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="avis" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-secondary mb-4">Avis de nos Clients</h2>
+                <div class="flex items-center justify-center mb-4">
+                    <div class="flex stars mr-4">
+                        <i class="ri-star-fill text-2xl"></i>
+                        <i class="ri-star-fill text-2xl"></i>
+                        <i class="ri-star-fill text-2xl"></i>
+                        <i class="ri-star-fill text-2xl"></i>
+                        <i class="ri-star-line text-2xl"></i>
+                    </div>
+                    <span class="text-xl font-semibold text-secondary">4.0/5 basé sur 242 avis</span>
+                </div>
+            </div>
+            
+            <div class="reviews-container overflow-hidden">
+                <div class="reviews-track flex transition-transform duration-500 ease-in-out">
+                    <div class="review-card bg-white p-6 rounded-xl shadow-lg mx-4 flex-shrink-0 w-80">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                                <span class="text-secondary font-semibold">AM</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-secondary">Aminata Mbaye</h4>
+                                <div class="flex stars">
+                                    <i class="ri-star-fill text-sm"></i>
+                                    <i class="ri-star-fill text-sm"></i>
+                                    <i class="ri-star-fill text-sm"></i>
+                                    <i class="ri-star-fill text-sm"></i>
+                                    <i class="ri-star-fill text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">"Excellente expérience ! Le service est impeccable et les plats sont délicieux. L'ambiance est très chaleureuse, parfait pour un dîner en famille."</p>
+                    </div>
+                    
+                    <div class="review-card bg-white p-6 rounded-xl shadow-lg mx-4 flex-shrink-0 w-80">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                                <span class="text-secondary font-semibold">JK</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-secondary">Jean-Claude Kamga</h4>
+                                <div class="flex stars">
+                                    <i class="ri-star-fill text-sm"></i>
+                                    <i class="ri-star-fill text-sm"></i>
+                                    <i class="ri-star-fill text-sm"></i>
+                                    <i class="ri-star-fill text-sm"></i>
+                                    <i class="ri-star-line text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">"Le Mya est devenu mon restaurant préféré à Douala. La qualité des plats est constante et le personnel est toujours aux petits soins."</p>
+                    </div>
+                    
+                    <div class="review-card bg-white p-6 rounded-xl shadow-lg mx-4 flex-shrink-0 w-80">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                                <span class="text-secondary font-semibold">FN</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-secondary">Fatima Nkomo</h4>
+                                <div class="flex stars">
+                                    <i class="ri-star-fill text-sm"></i>
+                                    <i class="ri-star-fill text-sm"></i>
+                                    <i class="ri-star-fill text-sm"></i>
+                                    <i class="ri-star-fill text-sm"></i>
+                                    <i class="ri-star-fill text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">"Un cadre magnifique et une cuisine raffinée. J'ai organisé mon anniversaire ici et tout était parfait. Je recommande vivement !"</p>
+                    </div>
+                    
+                    <div class="review-card bg-white p-6 rounded-xl shadow-lg mx-4 flex-shrink-0 w-80">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                                <span class="text-secondary font-semibold">PT</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-secondary">Pierre Tchounga</h4>
+                                <div class="flex stars">
+                                    <i class="ri-star-fill text-sm"></i>
+                                    <i class="ri-star-fill text-sm"></i>
+                                    <i class="ri-star-fill text-sm"></i>
+                                    <i class="ri-star-fill text-sm"></i>
+                                    <i class="ri-star-line text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">"Service de livraison rapide et plats toujours chauds. Le poulet DG est exceptionnel ! Merci pour cette qualité constante."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex justify-center mt-8">
+                <div class="flex space-x-2">
+                    <button class="review-dot w-3 h-3 rounded-full bg-primary"></button>
+                    <button class="review-dot w-3 h-3 rounded-full bg-gray-300"></button>
+                    <button class="review-dot w-3 h-3 rounded-full bg-gray-300"></button>
+                    <button class="review-dot w-3 h-3 rounded-full bg-gray-300"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-secondary mb-4">Nous Contacter</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Venez nous rendre visite ou contactez-nous pour toute information</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div class="space-y-8">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4 mt-1">
+                            <i class="ri-map-pin-fill text-xl text-secondary"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-secondary mb-2">Adresse</h3>
+                            <p class="text-gray-600">2MGW+3P, Douala, Cameroun</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4 mt-1">
+                            <i class="ri-phone-fill text-xl text-secondary"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-secondary mb-2">Téléphone</h3>
+                            <a href="tel:+237698678157" class="text-gray-600 hover:text-primary transition-colors">+237 698 67 81 57</a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4 mt-1">
+                            <i class="ri-time-fill text-xl text-secondary"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-secondary mb-2">Horaires</h3>
+                            <div class="text-gray-600 space-y-1">
+                                <p>Lun - Jeu : 12h00 - 22h00</p>
+                                <p>Ven - Sam : 12h00 - 23h00</p>
+                                <p>Dimanche : 12h00 - 21h00</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-4 pt-4">
+                        <a href="#" class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-primary hover:text-secondary transition-colors">
+                            <i class="ri-facebook-fill text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-primary hover:text-secondary transition-colors">
+                            <i class="ri-instagram-fill text-xl"></i>
+                        </a>
+                        <a href="https://wa.me/237698678157" class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-primary hover:text-secondary transition-colors">
+                            <i class="ri-whatsapp-fill text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-100 rounded-xl overflow-hidden h-96">
+                    <div class="w-full h-full bg-center bg-cover" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png')"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-secondary text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-playfair font-bold text-primary mb-4">Le Mya</h3>
+                    <p class="text-gray-300 mb-4">Le goût de l'exception à Douala. Une expérience culinaire raffinée dans un cadre élégant.</p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                        <a href="https://wa.me/237698678157" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="ri-whatsapp-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#accueil" class="hover:text-primary transition-colors">Accueil</a></li>
+                        <li><a href="#apropos" class="hover:text-primary transition-colors">À propos</a></li>
+                        <li><a href="#menu" class="hover:text-primary transition-colors">Menu</a></li>
+                        <li><a href="#services" class="hover:text-primary transition-colors">Services</a></li>
+                        <li><a href="#reservation" class="hover:text-primary transition-colors">Réservation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>Repas sur place</li>
+                        <li>À emporter</li>
+                        <li>Livraison à domicile</li>
+                        <li>Événements privés</li>
+                        <li>Réservations groupes</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Paiements Acceptés</h4>
+                    <div class="flex space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-gray-700 rounded flex items-center justify-center">
+                            <i class="ri-visa-fill text-primary"></i>
+                        </div>
+                        <div class="w-10 h-10 bg-gray-700 rounded flex items-center justify-center">
+                            <i class="ri-mastercard-fill text-primary"></i>
+                        </div>
+                        <div class="w-10 h-10 bg-gray-700 rounded flex items-center justify-center">
+                            <i class="ri-money-dollar-circle-fill text-primary"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm">Espèces, cartes bancaires et paiements mobiles acceptés</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Le Mya Restaurant. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script id="menu-filter">
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryBtns = document.querySelectorAll('.menu-category-btn');
+            const menuItems = document.querySelectorAll('.menu-item');
+            
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.dataset.category;
+                    
+                    categoryBtns.forEach(b => {
+                        b.classList.remove('bg-primary', 'text-secondary');
+                        b.classList.add('bg-white', 'text-secondary', 'border', 'border-gray-200');
+                    });
+                    
+                    this.classList.remove('bg-white', 'border', 'border-gray-200');
+                    this.classList.add('bg-primary', 'text-secondary');
+                    
+                    menuItems.forEach(item => {
+                        if (item.dataset.category === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+    <script id="reviews-carousel">
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.querySelector('.reviews-track');
+            const dots = document.querySelectorAll('.review-dot');
+            let currentIndex = 0;
+            const totalSlides = 4;
+            
+            function updateCarousel() {
+                const translateX = -currentIndex * 25;
+                track.style.transform = `translateX(${translateX}%)`;
+                
+                dots.forEach((dot, index) => {
+                    if (index === currentIndex) {
+                        dot.classList.remove('bg-gray-300');
+                        dot.classList.add('bg-primary');
+                    } else {
+                        dot.classList.remove('bg-primary');
+                        dot.classList.add('bg-gray-300');
+                    }
+                });
+            }
+            
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    currentIndex = index;
+                    updateCarousel();
+                });
+            });
+            
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateCarousel();
+            }, 5000);
+        });
+    </script>
+
+    <script id="smooth-scroll">
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const offsetTop = target.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script id="navbar-scroll">
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('header');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.classList.add('backdrop-blur-lg');
+                } else {
+                    header.classList.remove('backdrop-blur-lg');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
